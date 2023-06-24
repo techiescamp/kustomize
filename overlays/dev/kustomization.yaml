@@ -1,0 +1,19 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- ../../base
+
+patches:
+- path: deployment-dev.yaml
+- path: service-dev.yaml
+
+generatorOptions:
+  labels:
+    fruit: apple
+
+configMapGenerator:
+- name: index-html-configmap
+  behavior: replace
+  files:
+  - index-dev.html
