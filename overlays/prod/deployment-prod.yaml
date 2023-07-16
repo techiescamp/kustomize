@@ -3,8 +3,8 @@ kind: Deployment
 metadata:
   name: web-deployment
 spec:
+  replicas: 4 # Update the replica count to 3
   template:
-    replicas: 4 # Update the replica count to 3
     spec:
       containers:
       - name: nginx
